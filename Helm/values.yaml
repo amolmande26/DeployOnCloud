@@ -1,2 +1,6 @@
 isDeploymentRequired: true
-image: image
+k8s:
+  app: restful-app
+  namespace: dev
+  serviceAccount: k8s-restfulapp-sa
+  image: image
