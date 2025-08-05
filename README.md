@@ -9,6 +9,6 @@ Deploy application on GCP - Google Kubernetes Engine using docker, kubernetes, h
 5. Impersonate Google-managed Service Account with Workload Identity Federation so that github actions workflow able to access services from GCP.
 
 # Run workflow from github actions
-1. Push changes into deploy.yaml.
-2. Verify every stage is successful.
-3. Access GKE and verify there is pod called resful-app.. with healthy running status
+1. Push changes into the repository.
+2. Verify every stage is successful from github actions.
+3. Access GKE either from gcloud or google cloud console and verify kubernetes pod created in "dev" namespace.

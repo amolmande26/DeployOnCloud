@@ -6,15 +6,16 @@
 #4 Install/Upgrade helm chart on to GKE which contains kubernetes configuration.
 
 # Note : When there is a push to the "main" branch then only build would be triggered.
-#Verfication : Access GKE either from gcloud or google console and verify kubernetes pod created in "dev" namesapce.
 
 name: 'Build and Deploy to GKE'
 
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - '**'
+      - '!.github/workflows/**'
+
 env:
   REPOSITORY: 'github-action' # TODO: update to your Artifact Registry docker repository name
   IMAGE: 'restfulapp'
@@ -33,16 +34,16 @@ jobs:
       - name: 'Checkout'
         uses: 'actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332' # actions/checkout@v4
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-
-      - name: Run mvn clean install
-        working-directory: RestfulApp
-        run: mvn clean install -B
+#      - name: Set up JDK 17
+#        uses: actions/setup-java@v4
+#        with:
+#          java-version: '17'
+#          distribution: 'temurin'
+#          cache: maven
+#
+#      - name: Run mvn clean install
+#        working-directory: RestfulApp
+#        run: mvn clean install -B
 
       - uses: actions/checkout@v4
 
