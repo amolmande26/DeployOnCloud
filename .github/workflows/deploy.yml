@@ -12,9 +12,9 @@ name: 'Build and Deploy to GKE'
 
 on:
   push:
+    branches: [main]
     paths:
-      - '**'
-      - '!.github/workflows/**'
+      - '.github/workflows/*.yml'
 
 env:
   REPOSITORY: 'github-action' # TODO: update to your Artifact Registry docker repository name
