@@ -5,7 +5,7 @@
 #3 Prepare helm chart and publish it google artifact registry.
 #4 Install/Upgrade helm chart on to GKE which contains kubernetes configuration.
 
-# Note : When there is a push to the "main" branch then only build would be triggered.
+# Note : When there is a push to the "deploy.yml" branch then only build would be triggered.
 
 name: 'Build and Deploy to GKE'
 
